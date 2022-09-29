@@ -82,6 +82,8 @@ class Tweet(snscrape.base.Item):
 	card: typing.Optional['Card'] = None
 
 	likeCount = 'likeCount'
+	quoteCount = 'quoteCount'
+	replyCount = 'replyCount'
 	username = snscrape.base._DeprecatedProperty('username', lambda self: self.user.username, 'user.username')
 	outlinks = snscrape.base._DeprecatedProperty('outlinks', lambda self: [x.url for x in self.links] if self.links else [], 'links (url attribute)')
 	outlinksss = snscrape.base._DeprecatedProperty('outlinksss', lambda self: ' '.join(x.url for x in self.links) if self.links else '', 'links (url attribute)')
